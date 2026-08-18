@@ -11,11 +11,11 @@ import matplotlib.pyplot as plt
 
 
 # 2. Enlarge specific label types globally
-plt.rcParams['axes.labelsize'] = 18       # X and Y axis labels
-plt.rcParams['xtick.labelsize'] = 14      # X-axis tick marks
-plt.rcParams['ytick.labelsize'] = 14      # Y-axis tick marks
-plt.rcParams['legend.fontsize'] = 14      # Legend text
-plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['axes.labelsize'] = 26   # X and Y axis labels
+plt.rcParams['xtick.labelsize'] = 24   # X-axis tick marks
+plt.rcParams['ytick.labelsize'] = 24    # Y-axis tick marks
+plt.rcParams['legend.fontsize'] = 24    # Legend text
+plt.rcParams['axes.titlesize'] = 26
 
 
 
@@ -72,7 +72,7 @@ def E(z):
     return Hubble(z) / H0
 
 def f(z):
-    return c / E(z)
+    return c / Hubble(z)
 
 def comoving_trapezoidal(z, N=1000):
     z_vals = np.linspace(0, z, N+1)
@@ -139,7 +139,7 @@ plt.grid(True)
 plt.show()
 
 # Low-z approximation
-chi_lowz =  c*z_values
+chi_lowz =  (c/H0)*z_values
 
 import matplotlib.pyplot as plt
 
